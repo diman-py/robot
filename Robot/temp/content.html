@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{% block title %} Главная {% endblock %}
+
+{% block content %}
+		<div class="row">
+			{% for k, value in prod_list.items %}
+				<div class="col-6 col-sm-6 col-lg-4">
+					<div class="thumbnail">
+						<a href="#"><img src="/static/img/{{ value.image }}" alt="" class="img-responsive"></a>
+						<a href="#" style="text-decoration:none"><h2>{{ value.name }}</h2></a>
+						<p> {{ value.desc }} </p>
+						<p>Цена: {{ value.price }} руб.<p>						
+						</div>
+					<p><a class="btn btn-default" href="#" role="button">Подробнее &raquo;</a></p>
+				</div><!--/span-->
+			{% endfor %}
+            
+		</div><!--/row-->
+{% endblock %}
